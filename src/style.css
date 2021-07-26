@@ -1,0 +1,70 @@
+.sparkamplify-icon {
+    position: relative;
+    top: 3px;
+}
+
+.pycon-icon {
+    position: relative;
+    top: 6px;
+}
+
+.more {
+    color: #686565;
+    opacity: 1;
+    font-weight: 700;
+}
+
+.linooohon {
+    text-decoration: underline;
+}
+
+:root {
+    --font: 'Special Elite', cursive;
+    --text-color: #000;
+}
+
+* {
+    font-family: var(--font);
+}
+
+html,
+body {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+.entrance {
+    max-width: 450px;
+    /* width: 90%; */
+    padding: 0 1.5rem;
+}
+
+p,
+li {
+    font-size: 0.8rem;
+    line-height: 1.5;
+    letter-spacing: 1.5px;
+    color: var(--text-color);
+}
+
+a {
+    color: var(--text-color);
+    opacity: 0.6;
+    transition: 0.1s;
+}
+
+a:hover {
+    opacity: 1;
+    background-color: rgb(64, 114, 107);
+    color: rgb(242, 244, 244);
+}
+
+@media (min-width: 768px) {
+    p,
+    li {
+        font-size: 1.15rem;
+        letter-spacing: 3px;
+    }
+}
