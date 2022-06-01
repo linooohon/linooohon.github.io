@@ -119,11 +119,7 @@
 
     <script>
         let eraseEnable = false;        
-        let my_entrance_ = document.getElementById("my_entrance")
-        let defaultCanvas0 = document.getElementById("defaultCanvas0")
-        defaultCanvas0.addEventListener('touchmove', event => {
-            event.preventDefault();
-        }, { passive: false });
+        let my_entrance_ = document.getElementById("my_entrance");
 
         // let touchMoved;
         // $('button').on('touchend', function (e) {
@@ -158,16 +154,22 @@
             if (eraseEnable) {
                 noErase();
                 strokeWeight(1);
-                toggleBtn.html("Eraser, if you want...")
+                toggleBtn.html("Eraser, if you want...");
                 eraseEnable = false;
             }
             else {
                 erase(150, 255);
                 strokeWeight(50);
-                toggleBtn.html("Draw again?")
+                toggleBtn.html("Draw again?");
                 eraseEnable = true;
             }
         }
+
+
+        let defaultCanvas0 = document.getElementById("defaultCanvas0")
+        defaultCanvas0.addEventListener('touchmove', event => {
+            event.preventDefault();
+        }, { passive: false });
     </script>
 
 </body>
