@@ -118,15 +118,23 @@
 
 
     <script>
-        let eraseEnable = false;
+        let eraseEnable = false;        
+        let my_entrance_ = document.getElementById("my_entrance")
+
+        my_entrance_.addEventListener('touchmove', event => {
+            event.preventDefault();
+        });
+
         function setup() {
-                let canvas_ = createCanvas(windowWidth, windowHeight);
-                canvas_.parent("my_entrance");
-                // background(102);
-                toggleBtn = createButton("Eraser, if you want...");
-                toggleBtn.position(400, 900);
-                toggleBtn.mouseClicked(toggleErase);
-            }
+            let canvas_ = createCanvas(windowWidth, windowHeight);
+            canvas_.parent("my_entrance");
+            // background(102);
+            toggleBtn = createButton("Eraser, if you want...");
+            toggleBtn.parent("my_entrance");
+            toggleBtn.id("eraser_button");
+            // toggleBtn.position(15, 900);
+            toggleBtn.mouseClicked(toggleErase);
+        }
 
         function draw() {
             stroke(51);
@@ -136,19 +144,19 @@
         }
 
         function toggleErase() {
-                if (eraseEnable) {
-                    noErase();
-                    strokeWeight(1);
-                    toggleBtn.html("Eraser, if you want...")
-                    eraseEnable = false;
-                }
-                else {
-                    erase(150, 255);
-                    strokeWeight(50);
-                    toggleBtn.html("Draw again?")
-                    eraseEnable = true;
-                }
+            if (eraseEnable) {
+                noErase();
+                strokeWeight(1);
+                toggleBtn.html("Eraser, if you want...")
+                eraseEnable = false;
             }
+            else {
+                erase(150, 255);
+                strokeWeight(50);
+                toggleBtn.html("Draw again?")
+                eraseEnable = true;
+            }
+        }
     </script>
 
 </body>
