@@ -35,10 +35,13 @@
 
     <title>linooohon/PhilLin</title>
     <base target="_blank">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.1/p5.min.js"
+        integrity="sha512-NxocnqsXP3zm0Xb42zqVMvjQIktKEpTIbCXXyhBPxqGZHqhcOXHs4pXI/GoZ8lE+2NJONRifuBpi9DxC58L0Lw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 </head>
 
 <body>
-    <div class="entrance">
+    <div class="entrance" id="my_entrance">
         <p>
             <span class="icon">🧪</span>I'm Pin-Hung Lin. Some of my friends call me Phil,
             and also <span class="icon">🗣</span>aliases like 'Pinhon', 'Pinnon' sometimes happens,
@@ -47,33 +50,37 @@
             since high school.
         </p>
         <p>
-            Recently, working at
-            <img src="./static/sparkamplify.png" alt="SparkAmplify" width="18" class="sparkamplify-icon"><a
-                href="https://www.sparkamplify.com/">SparkAmplify</a>
-            as a Backend Engineer.
-        </p>
-        <p>
-            And also I'm a newbie of <img src="./static/pyconicon.svg" alt="SparkAmplify" width="25"
+            And also I'm a member of <img src="./static/pyconicon.svg" alt="SparkAmplify" width="25"
                 class="pycon-icon"><a href="https://tw.pycon.org/2021/en-us">PyConTW</a>
             helping build up the PyCon conference website.
-            During coding journey, I make mistakes, 
-            or run into issues sometimes,
+            During coding journey, I made mistakes, 
+            or ran into issues sometimes,
             but I enjoy the process of solving problems. 
             Fall big, fall forward,
-            always fixed them, and move on. Try to find my path in this big big world.
-
+            always fixed them, and move on.
+            <br>
+            <br>
+            Based in Tokyo recently.
+            <br>
+            <br>
             You can find me on
             <a href="https://github.com/linooohon">github</a>,
             <a href="https://www.linkedin.com/in/pinhunglin/">linkedin</a>,
             <a href="https://linooohon.com/blog/">blog</a>, and how I press
             <a href="https://www.instagram.com/970106__/">my shutter</a> <span class="icon">📸</span>,
             also you can drop me an
-            <a href="mailto:phil@sparkamplify.com">email</a>
+            <a href="mailto:linooohonjp@gmail.com">email</a>
             if you want to chat with me.
+        </p>
+        <p>
+            I was working at
+            <img src="./static/sparkamplify.png" alt="SparkAmplify" width="18" class="sparkamplify-icon"><a
+                href="https://www.sparkamplify.com/">SparkAmplify</a>
+            as a Software Engineer. Actively looking for new opportunities in Japan.
         </p>
 
         <p>
-            In progress..2021...
+            In progress..2022...
         </p>
         <ul>
             <li>
@@ -109,6 +116,21 @@
         </p>
     </div>
 
+
+    <script>
+        function setup() {
+                var canvas_ = createCanvas(windowWidth, windowHeight);
+                canvas_.parent("my_entrance");
+                // background(102);
+            }
+
+        function draw() {
+            stroke(51);
+            if (mouseIsPressed === true) {
+                line(mouseX, mouseY, pmouseX, pmouseY);
+            }
+        }
+    </script>
 
 </body>
 
