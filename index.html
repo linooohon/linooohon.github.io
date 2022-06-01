@@ -143,11 +143,20 @@
             toggleBtn.mouseClicked(toggleErase);
         }
 
-        function draw() {
+        // function draw() {
+        //     stroke(51);
+        //     if (mouseIsPressed === true) {
+        //         line(mouseX, mouseY, pmouseX, pmouseY);
+        //     }
+        // }
+
+        // function touchMoved() {
+        //     stroke(51);
+        //     line(mouseX, mouseY, pmouseX, pmouseY);
+        // }
+        function mouseDragged() {
             stroke(51);
-            if (mouseIsPressed === true) {
-                line(mouseX, mouseY, pmouseX, pmouseY);
-            }
+            line(mouseX, mouseY, pmouseX, pmouseY);
         }
 
         function toggleErase() {
