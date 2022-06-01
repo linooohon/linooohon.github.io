@@ -94,3 +94,25 @@ canvas {
 #eraser_button:hover {
     cursor: pointer;
 }
+
+.button_item {
+    cursor: pointer;
+    position: relative;
+    left: 21px;
+}
+
+#red {
+    background-color: red;
+}
+
+#green {
+    background-color: green;
+}
+
+#blue {
+    background-color: blue;
+}
+
+#black {
+    background-color: #000;
+}

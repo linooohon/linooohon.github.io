@@ -118,45 +118,124 @@
 
 
     <script>
-        let eraseEnable = false;        
-        let my_entrance_ = document.getElementById("my_entrance");
+        let eraseEnable = false;    
+        
+        let black_flag = false;
+        let red_flag = false;
+        let blue_flag = false;
+        let green_flag = false;
 
-        // let touchMoved;
-        // $('button').on('touchend', function (e) {
-        //     if (touchMoved != true) {
-        //         // button click action
-        //     }
-        // }).on('touchmove', function (e) {
-        //     touchMoved = true;
-        // }).on('touchstart', function () {
-        //     touchMoved = false;
-        // });
+        let small_flag = false;
+        let middle_flag = false;
+        let big_flag = false;
 
         function setup() {
-            let canvas_ = createCanvas(windowWidth, windowHeight);
-            canvas_.parent("my_entrance");
-            // background(102);
-            toggleBtn = createButton("Eraser, if you want...");
-            toggleBtn.parent("my_entrance");
-            toggleBtn.id("eraser_button");
-            // toggleBtn.position(15, 900);
-            toggleBtn.mouseClicked(toggleErase);
+            if (windowWidth > 1024) {
+                let canvas_ = createCanvas(windowWidth, windowHeight);
+                canvas_.parent("my_entrance");
+                // background(102);
+                toggleBtn = createButton("Eraser, if you want...");
+                toggleBtn.parent("my_entrance");
+                toggleBtn.id("eraser_button");
+                // toggleBtn.position(15, 900);
+                toggleBtn.mouseClicked(toggleErase);
+
+                const black_ = createButton('b');
+                black_.id('black');
+                black_.addClass('button_item');
+
+                const red_ = createButton('r');
+                red_.id('red');
+                red_.addClass('button_item');
+                
+                const green_ = createButton('g');
+                green_.id('green');
+                green_.addClass('button_item');
+                
+                const blue_ = createButton('b');
+                blue_.id('blue');
+                blue_.addClass('button_item');
+                
+                black_.mouseClicked(toBlack);
+                red_.mouseClicked(toRed);
+                green_.mouseClicked(toGreen);
+                blue_.mouseClicked(toBlue);
+
+                const small_stroke = createButton('s');
+                small_stroke.id('small_stroke');
+                small_stroke.addClass('button_item');
+
+                const middle_stroke = createButton('m');
+                middle_stroke.id('middle_stroke');
+                middle_stroke.addClass('button_item');
+
+                const big_stroke = createButton('b');
+                big_stroke.id('big_stroke');
+                big_stroke.addClass('button_item');
+
+                small_stroke.mouseClicked(toSmall);
+                middle_stroke.mouseClicked(toMiddle);
+                big_stroke.mouseClicked(toBig);
+
+            }
+        }
+        function touchMoved() {
+            stroke(51);
+            if (red_flag === true) stroke('red');
+            if (green_flag === true) stroke('green');
+            if (blue_flag === true) stroke('blue');
+            if (black_flag === true) stroke(51);
+
+            if (small_flag === true) strokeWeight(1);
+            if (middle_flag === true) strokeWeight(15);
+            if (big_flag === true) strokeWeight(30);
+            line(mouseX, mouseY, pmouseX, pmouseY);
         }
 
-        // function draw() {
-        //     stroke(51);
-        //     if (mouseIsPressed === true) {
-        //         line(mouseX, mouseY, pmouseX, pmouseY);
-        //     }
-        // }
+        function toBlack() {
+            black_flag = true;
+            red_flag = false;
+            green_flag = false;
+            blue_flag = false;
+        }
 
-        // function touchMoved() {
-        //     stroke(51);
-        //     line(mouseX, mouseY, pmouseX, pmouseY);
-        // }
-        function mouseDragged() {
-            stroke(51);
-            line(mouseX, mouseY, pmouseX, pmouseY);
+        function toRed() {
+            black_flag = false;
+            red_flag = true;
+            green_flag = false;
+            blue_flag = false;
+        }
+
+        function toBlue() {
+            black_flag = false;
+            red_flag = false;
+            green_flag = false;
+            blue_flag = true;
+        }
+
+        function toGreen() {
+            black_flag = false;
+            red_flag = false;
+            green_flag = true;
+            blue_flag = false;
+        }
+
+        function toSmall() {
+            small_flag = true;
+            middle_flag = false;
+            big_flag = false;
+        }
+
+        function toMiddle() {
+            small_flag = false;
+            middle_flag = true;
+            big_flag = false;
+        }
+
+        function toBig() {
+            small_flag = false;
+            middle_flag = false;
+            big_flag = true;
         }
 
         function toggleErase() {
@@ -173,15 +252,6 @@
                 eraseEnable = true;
             }
         }
-
-
-        // let defaultCanvas0 = document.getElementById("defaultCanvas0")
-        // my_entrance_.addEventListener('touchend', event => {
-        //     event.preventDefault();
-        // }, { passive: false });
-        // my_entrance_.addEventListener('touchend', event => {
-        //         event.preventDefault();
-        // });
     </script>
 
 </body>
