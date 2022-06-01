@@ -120,10 +120,21 @@
     <script>
         let eraseEnable = false;        
         let my_entrance_ = document.getElementById("my_entrance")
-
-        my_entrance_.addEventListener('touchmove', event => {
+        let defaultCanvas0 = document.getElementById("defaultCanvas0")
+        defaultCanvas0.addEventListener('touchmove', event => {
             event.preventDefault();
         }, { passive: false });
+
+        // let touchMoved;
+        // $('button').on('touchend', function (e) {
+        //     if (touchMoved != true) {
+        //         // button click action
+        //     }
+        // }).on('touchmove', function (e) {
+        //     touchMoved = true;
+        // }).on('touchstart', function () {
+        //     touchMoved = false;
+        // });
 
         function setup() {
             let canvas_ = createCanvas(windowWidth, windowHeight);
